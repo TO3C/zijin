@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>紫金国际中心商业裙楼 - 招商中心 | ZIJIN INTERNATIONAL CENTER</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6D28D9', // 紫色主色调
+                        secondary: '#F59E0B', // 金色辅助色
+                        dark: '#1E293B',
+                        light: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7))",
+                    }
+                },
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            .text-gradient {
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+            }
+            .animate-float {
+                animation: float 6s ease-in-out infinite;
+            }
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+            .scrollbar-hide {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="font-inter text-dark bg-light antialiased">
+    <!-- 导航栏 -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <div class="h-10 w-10 rounded-full bg-primary flex items-center justify-center">
+                        <span class="text-white text-xl font-bold">Z</span>
+                    </div>
+                    <span class="text-white text-xl font-bold text-shadow">ZIJIN INTERNATIONAL</span>
+                </div>
+                
+                <!-- 桌面导航 -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-white hover:text-secondary transition-colors font-medium">项目介绍 / About</a>
+                    <a href="#location" class="text-white hover:text-secondary transition-colors font-medium">区位优势 / Location</a>
+                    <a href="#floors" class="text-white hover:text-secondary transition-colors font-medium">楼层规划 / Floors</a>
+                    <a href="#advantages" class="text-white hover:text-secondary transition-colors font-medium">投资优势 / Advantages</a>
+                    <a href="#contact" class="text-white hover:text-secondary transition-colors font-medium">联系方式 / Contact</a>
+                    <div class="flex items-center space-x-2">
+                        <button id="lang-zh" class="px-3 py-1 rounded-full bg-primary text-white text-sm">中文</button>
+                        <button id="lang-en" class="px-3 py-1 rounded-full bg-transparent text-white text-sm hover:bg-primary/30 transition-colors">English</button>
+                    </div>
+                </div>
+                
+                <!-- 移动端菜单按钮 -->
+                <div class="md:hidden flex items-center">
+                    <button id="menu-toggle" class="text-white focus:outline-none">
+                        <i class="fa fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 移动端菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
+            <div class="container mx-auto px-4 py-3 space-y-3">
+                <a href="#about" class="block py-2 px-4 hover:bg-gray-100 rounded-lg transition-colors">项目介绍 / About</a>
+                <a href="#location" class="block py-2 px-4 hover:bg-gray-100 rounded-lg transition-colors">区位优势 / Location</a>
+                <a href="#floors" class="block py-2 px-4 hover:bg-gray-100 rounded-lg transition-colors">楼层规划 / Floors</a>
+                <a href="#advantages" class="block py-2 px-4 hover:bg-gray-100 rounded-lg transition-colors">投资优势 / Advantages</a>
+                <a href="#contact" class="block py-2 px-4 hover:bg-gray-100 rounded-lg transition-colors">联系方式 / Contact</a>
+                <div class="flex items-center space-x-2 py-2">
+                    <button id="mobile-lang-zh" class="px-3 py-1 rounded-full bg-primary text-white text-sm">中文</button>
+                    <button id="mobile-lang-en" class="px-3 py-1 rounded-full bg-transparent text-dark text-sm hover:bg-primary/30 transition-colors">English</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-hero-pattern z-10"></div>
+        <div class="absolute inset-0 z-0">
+            <img src="https://picsum.photos/id/1067/2000/1200" alt="三亚城市景观" class="w-full h-full object-cover">
+        </div>
+        
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center">
+            <div class="space-y-6 max-w-4xl mx-auto">
+                <h1 class="text-[clamp(2.5rem,8vw,5rem)] font-extrabold text-white leading-tight text-shadow">
+                    <span class="block">紫金国际中心</span>
+                    <span class="block text-secondary">ZIJIN INTERNATIONAL CENTER</span>
+                </h1>
+                
+                <p class="text-[clamp(1.2rem,3vw,1.8rem)] text-white text-shadow font-light">
+                    <span lang="zh">2025荣耀开街！黄金现铺 火热招商</span>
+                    <span lang="en" class="hidden">Grand Opening 2025! Premium Retail Spaces Now Available</span>
+                </p>
+                
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 pt-8">
+                    <a href="#contact" class="px-8 py-4 bg-primary hover:bg-primary/90 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        <span lang="zh">立即咨询</span>
+                        <span lang="en" class="hidden">Inquire Now</span>
+                    </a>
+                    <a href="#floors" class="px-8 py-4 bg-transparent border-2 border-white hover:bg-white/20 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105">
+                        <span lang="zh">查看楼层规划</span>
+                        <span lang="en" class="hidden">View Floor Plans</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-0 right-0 flex justify-center z-20 animate-bounce">
+            <a href="#about" class="text-white text-3xl">
+                <i class="fa fa-angle-down"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- 项目介绍 -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(2rem,5vw,3rem)] font-bold text-dark">
+                    <span lang="zh">项目介绍</span>
+                    <span lang="en" class="hidden">Project Introduction</span>
+                </h2>
+                <div class="w-24 h-1 bg-primary mx-auto mt-4 mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    <span lang="zh">紫金国际中心商业裙楼，坐落于三亚市核心商务区，是一座集高端零售、特色餐饮、休闲娱乐于一体的现代化商业综合体。</span>
+                    <span lang="en" class="hidden">ZIJIN International Center Commercial Podium, located in the core business district of Sanya, is a modern commercial complex integrating high-end retail, specialty dining, and leisure entertainment.</span>
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute -top-6 -left-6 w-64 h-64 bg-secondary/20 rounded-full blur-3xl"></div>
+                    <div class="absolute -bottom-6 -right-6 w-64 h-64 bg-primary/20 rounded-full blur-3xl"></div>
+                    <img src="https://picsum.photos/id/1073/800/600" alt="项目效果图" class="w-full h-auto rounded-2xl shadow-xl relative z-10">
+                    <div class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-white p-4 rounded-lg shadow-lg z-20 max-w-xs">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center">
+                                <i class="fa fa-calendar text-primary text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark" lang="zh">预计开业时间</h4>
+                                <h4 class="font-bold text-dark hidden" lang="en">Expected Opening</h4>
+                                <p class="text-secondary font-semibold">2025年</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-8">
+                    <div class="space-y-4">
+                        <h3 class="text-2xl font-bold text-dark flex items-center">
+                            <i class="fa fa-map-marker text-primary mr-3"></i>
+                            <span lang="zh">黄金区位</span>
+                            <span lang="en" class="hidden">Prime Location</span>
+                        </h3>
+                        <p class="text-gray-600">
+                            <span lang="zh">位于海南省三亚市天涯区迎宾路9号，中央商务区核心位置，毗邻海月广场。</span>
+                            <span lang="en" class="hidden">Located at No. 9 Yingbin Road, Tianya District, Sanya City, Hainan Province, in the core of the Central Business District, adjacent to Haiyue Square.</span>
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <h3 class="text-2xl font-bold text-dark flex items-center">
+                            <i class="fa fa-building text-primary mr-3"></i>
+                            <span lang="zh">建筑特色</span>
+                            <span lang="en" class="hidden">Architectural Features</span>
+                        </h3>
+                        <p class="text-gray-600">
+                            <span lang="zh">全玻璃幕墙设计，现代感十足；中庭透视设计提升空间采光；屋顶花园提供绿色休闲空间。</span>
+                            <span lang="en" class="hidden">All-glass curtain wall design with a modern feel; atrium perspective design enhances natural lighting; rooftop garden provides green leisure space.</span>
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <h3 class="text-2xl font-bold text-dark flex items-center">
+                            <i class="fa fa-expand text-primary mr-3"></i>
+                            <span lang="zh">空间优势</span>
+                            <span lang="en" class="hidden">Space Advantages</span>
+                        </h3>
+                        <p class="text-gray-600">
+                            <span lang="zh">一层、二层层高约5.4米，三层约4.5米，提供全能百变空间；面积区间300-732㎡，满足多元业态需求。</span>
+                            <span lang="en" class="hidden">First and second floors with a height of approximately 5.4 meters, third floor about 4.5 meters, providing versatile space; area ranging from 300-732㎡, meeting diverse business needs.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 区位优势 -->
+    <section id="location" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(2rem,5vw,3rem)] font-bold text-dark">
+                    <span lang="zh">区位优势</span>
+                    <span lang="en" class="hidden">Location Advantages</span>
+                </h2>
+                <div class="w-24 h-1 bg-primary mx-auto mt-4 mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    <span lang="zh">紫金国际中心位于三亚市核心区域，拥有无与伦比的区位优势和交通便利性。</span>
+                    <span lang="en" class="hidden">ZIJIN International Center is located in the core area of Sanya City, with unparalleled location advantages and transportation convenience.</span>
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                <div class="lg:col-span-2 space-y-8">
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold text-dark mb-4">
+                            <span lang="zh">交通便捷</span>
+                            <span lang="en" class="hidden">Convenient Transportation</span>
+                        </h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div class="mt-1 mr-4 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                    <i class="fa fa-plane text-primary"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-dark">
+                                        <span lang="zh">凤凰国际机场</span>
+                                        <span lang="en" class="hidden">Phoenix International Airport</span>
+                                    </p>
+                                    <p class="text-gray-600">
+                                        <span lang="zh">距离约8.7公里</span>
+                                        <span lang="en" class="hidden">Approximately 8.7 km</span>
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="mt-1 mr-4 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                    <i class="fa fa-train text-primary"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-dark">
+                                        <span lang="zh">三亚站</span>
+                                        <span lang="en" class="hidden">Sanya Railway Station</span>
+                                    </p>
+                                    <p class="text-gray-600">
+                                        <span lang="zh">距离约5.4公里</span>
+                                        <span lang="en" class="hidden">Approximately 5.4 km</span>
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="mt-1 mr-4 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                    <i class="fa fa-road text-primary"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-dark">
+                                        <span lang="zh">城市主干道</span>
+                                        <span lang="en" class="hidden">Urban Main Roads</span>
+                                    </p>
+                                    <p class="text-gray-600">
+                                        <span lang="zh">直接连接迎宾路、三亚湾路</span>
+                                        <span lang="en" class="hidden">Direct access to Yingbin Road, Sanya Bay Road</span>
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold text-dark mb-4">
+                            <span lang="zh">周边配套</span>
+                            <span lang="en" class="hidden">Surrounding Facilities</span>
+                        </h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <i class="fa fa-shopping-bag text-primary text-2xl mb-2"></i>
+                                <p class="font-medium" lang="zh">海月广场</p>
+                                <p class="font-medium hidden" lang="en">Haiyue Square</p>
+                            </div>
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <i class="fa fa-hotel text-primary text-2xl mb-2"></i>
+                                <p class="font-medium" lang="zh">高端酒店</p>
+                                <p class="font-medium hidden" lang="en">Luxury Hotels</p>
+                            </div>
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <i class="fa fa-home text-primary text-2xl mb-2"></i>
+                                <p class="font-medium" lang="zh">高端住宅</p>
+                                <p class="font-medium hidden" lang="en">High-end Residences</p>
+                            </div>
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <i class="fa fa-briefcase text-primary text-2xl mb-2"></i>
+                                <p class="font-medium" lang="zh">写字楼群</p>
+                                <p class="font-medium hidden" lang="en">Office Buildings</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-primary text-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold mb-4">
+                            <span lang="zh">市场潜力</span>
+                            <span lang="en" class="hidden">Market Potential</span>
+                        </h3>
+                        <p class="mb-4">
+                            <span lang="zh">三亚作为国际旅游城市，每年接待大量国内外游客，商业发展潜力巨大。</span>
+                            <span lang="en" class="hidden">As an international tourist city, Sanya receives a large number of domestic and foreign tourists every year, with huge potential for commercial development.</span>
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span lang="zh">年游客量：2000万+</span>
+                            <span lang="en" class="hidden">Annual Tourists: 20M+</span>
+                            <i class="fa fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-3 h-[600px] rounded-xl shadow-lg overflow-hidden relative">
+                    <img src="https://picsum.photos/id/1031/1200/800" alt="区位地图" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-primary/10 flex items-center justify-center">
+                        <div class="bg-white p-6 rounded-xl shadow-xl max-w-md">
+                            <h4 class="font-bold text-lg text-primary mb-2">
+                                <span lang="zh">紫金国际中心</span>
+                                <span lang="en" class="hidden">ZIJIN International Center</span>
+                            </h4>
+                            <p class="text-gray-600 mb-4">
+                                <span lang="zh">海南省三亚市天涯区迎宾路9号</span>
+                                <span lang="en" class="hidden">No. 9 Yingbin Road, Tianya District, Sanya City, Hainan Province</span>
+                            </p>
+                            <button class="w-full py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors">
+                                <span lang="zh">查看地图</span>
+                                <span lang="en" class="hidden">View Map</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 楼层规划 -->
+    <section id="floors" class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(2rem,5vw,3rem)] font-bold text-dark">
+                    <span lang="zh">楼层规划</span>
+                    <span lang="en" class="hidden">Floor Plans</span>
+                </h2>
+                <div class="w-24 h-1 bg-primary mx-auto mt-4 mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    <span lang="zh">紫金国际中心商业裙楼共三层，每层都有独特的空间特点和业态规划，满足不同品牌的需求。</span>
+                    <span lang="en" class="hidden">ZIJIN International Center Commercial Podium has three floors, each with unique spatial characteristics and business planning to meet the needs of different brands.</span>
+                </p>
+            </div>
+            
+            <!-- 楼层选择器 -->
+            <div class="flex justify-center mb-12">
+                <div class="inline-flex bg-gray-100 p-1 rounded-lg">
+                    <button class="floor-btn active px-6 py-3 rounded-lg bg-primary text-white font-medium transition-all" data-floor="1">
+                        <span lang="zh">一层</span>
+                        <span lang="en" class="hidden">1F</span>
+                    </button>
+                    <button class="floor-btn px-6 py-3 rounded-lg text-dark font-medium hover:bg-gray-200 transition-all" data-floor="2">
+                        <span lang="zh">二层</span>
+                        <span lang="en" class="hidden">2F</span>
+                    </button>
+                    <button class="floor-btn px-6 py-3 rounded-lg text-dark font-medium hover:bg-gray-200 transition-all" data-floor="3">
+                        <span lang="zh">三层</span>
+                        <span lang="en" class="hidden">3F</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- 楼层内容 -->
+            <div class="floor-content active" id="floor-1">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg">
+                        <div class="relative aspect-[4/3] rounded-lg overflow-hidden">
+                            <img src="https://picsum.photos/id/1040/800/600" alt="一层平面图" class="w-full h-full object-cover">
+                            <div class="absolute top-4 left-4 bg-primary text-white px-4 py-1 rounded-full text-sm font-medium">
+                                <span lang="zh">一层平面图</span>
+                                <span lang="en" class="hidden">1F Floor Plan</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                                <span class="text-3xl font-bold text-primary">1F</span>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-dark">
+                                    <span lang="zh">一层商业空间</span>
+                                    <span lang="en" class="hidden">1F Commercial Space</span>
+                                </h3>
+                                <p class="text-gray-600">
+                                    <span lang="zh">面积区间：307-555㎡ | 层高：5.4米</span>
+                                    <span lang="en" class="hidden">Area Range: 307-555㎡ | Height: 5.4m</span>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <h4 class="text-xl font-bold text-dark">
+                                <span lang="zh">推荐业态</span>
+                                <span lang="en" class="hidden">Recommended Business Types</span>
+                            </h4>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm">
+                                    <span lang="zh">高端品牌旗舰店</span>
+                                    <span lang="en" class="hidden">Luxury Flagship Stores</span>
+                                </span>
+                                <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm">
+                                    <span lang="zh">精品零售</span>
+                                    <span lang="en" class="hidden">Boutique Retail</span>
+                                </span>
+                                <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm">
+                                    <span lang="zh">特色餐饮</span>
+                                    <span lang="en" class="hidden">Specialty Dining</span>
+                                </span>
+                                <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm">
+                                    <span lang="zh">珠宝首饰</span>
+                                    <span lang="en" class="hidden">Jewelry & Watches</span>
+                                </span>
+                                <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm">
+                                    <span lang="zh">高端化妆品</span>
+                                    <span lang="en" class="hidden">Premium Cosmetics</span>
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <h4 class="text-xl font-bold text-dark">
+                                <span lang="zh">空间特点</span>
+                                <span lang="en" class="hidden">Space Features</span>
+                            </h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <i class="fa fa-check-circle text-primary mr-3"></i>
+                                    <span>
+                                        <span lang="zh">全临街设计，展示面极佳</span>
+                                        <span lang="en" class="hidden">All street-facing design with excellent display</span>
+                                    </span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa fa-check-circle text-primary mr-3"></i>
+                                    <span>
+                                        <span lang="zh">5.4米层高，空间通透开阔</span>
+                                        <span lang="en" class="hidden">5.4m ceiling height, spacious and open</span>
+                                    </span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa fa-check-circle text-primary mr-3"></i>
+                                    <span>
+                                        <span lang="zh">临近主入口，客流量大</span>
+                                        <span lang="en" class="hidden">Close to main entrance, high foot traffic</span>
+                                    </span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa fa-check-circle text-primary mr-3"></i>
+                                    <span>
+                                        <span lang="zh">适合打造品牌形象旗舰店</span>
+                                        <span lang="en" class="hidden">Ideal for flagship brand stores</span>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="pt-4">
+                            <a href="#contact" class="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors">
+                                <span lang="zh">预约看铺</span>
+                                <span lang="en" class="hidden">Book a Viewing</span>
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="floor-content hidden" id="floor-2">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg">
+                        <div class="relative aspect-[4/3] rounded-lg overflow-hidden">
+                            <img src="https://picsum.photos/id/1037/800/600" alt="二层平面图" class="w-full h-full object-cover">
+                            <div class="absolute top-4 left-4 bg-primary text-white px-4 py-1 rounded-full text-sm font-medium">
+                                <span lang="zh">二层平面图</span>
+                                <span lang="en" class="hidden">2F Floor Plan</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                                <span class="text-3xl font-bold text-primary">2F</span>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-dark">
+                                    <span lang="zh">二层商业空间</span>
+                                    <span lang="en" class="hidden">2F Commercial Space</span>
+                                </h3>
+                                <p class="text-gray-600">
+                                    <span lang="zh">面积区间：303-732㎡ | 层高：5.4米</span>
+                                    <span lang="en" class="hidden">Area Range: 303-732㎡ | Height: 5.4m</span>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <h4 class="text-xl font-bold text-dark">
+                                <span lang="zh">推荐业态</span>
+                                <span lang="en" class="hidden">Recommended Business Types</span>
+                            </h4>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm">
+                                    <span lang="zh">主题餐厅</span>
+                                    <span lang="en" class="hidden">Theme Restaurants</span>
+                                </span>
+                                <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm">
+                                    <span lang="zh">休闲娱乐</span>
+                                    <span lang="en" class="hidden">Entertainment</span>
+                                </span>
+                                <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm">
+                                    <span lang="zh">儿童业态</span>
+                                    <span lang="en" class="hidden">Children's业态</span>
+                                </span>
+                                <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm">
+                                    <span lang="zh">教育培训</span>
+                                    <span lang="en" class="hidden">Education & Training</span>
+                                </span>
+                                <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm">
+                                    <span lang="zh">文化休闲</span>
+                                    <span lang="en" class="hidden">Cultural & Leisure</span>
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <h4 class="text-xl font-bold text-dark">
+                                <span lang="zh">空间特点</span>
+                                <span lang="en" class="hidden">Space Features</span>
+                            </h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <i class="fa fa-check-circle text-primary mr-3"></i>
+                                    <span>
+                                        <span lang="zh">围合式格局，视野开阔</span>
+                                        <span lang="en" class="hidden">Enclosed layout with wide view</span>
+                                    </span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa fa-check-circle text-primary mr-3"></i>
+                                    <span>
+                                        <span lang="zh">中庭位置，采光充足</span>
+                                        <span lang="en" class="hidden">Atrium location with ample lighting</span>
+                                    </span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa fa-check-circle text-primary mr-3"></i>
+                                    <span>
+                                        <span lang="zh">大面积空间，灵活性强</span>
+                                        <span lang="en" class="hidden">Large area with high flexibility</span>
+                                    </span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa fa-check-circle text-primary mr-3"></i>
+                                    <span>
+                                        <span lang="zh">适合体验式消费业态</span>
+                                        <span lang="en" class="hidden">Ideal for experiential consumption</span>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="pt-4">
+                            <a href="#contact" class="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors">
+                                <span lang="zh">预约看铺</span>
+                                <span lang="en" class="hidden">Book a Viewing</span>
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="floor-content hidden" id="floor-3">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg">
+                        <div class="relative aspect-[4/3] rounded-lg overflow-hidden">
+                            <img src="https://picsum.photos/id/1039/800/600" alt="三层平面图" class="w-full h-full object-cover">
+                            <div class="absolute top-4 left-4 bg-primary text-white px-4 py-1 rounded-full text-sm font-medium">
+                                <span lang="zh">三层平面图</span>
+                                <span lang="en" class="hidden">3F Floor Plan</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                                <span class="text-3xl font-bold text-primary">3F</span>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-dark">
+                                    <span lang="zh">三层商业空间</span>
+                                    <span lang="en" class="hidden">3F Commercial Space</span>
+                                </h3>
+                                <p class="text-gray-600">
+                                    <span lang="zh">面积区间：322-583㎡ | 层高：4.5米</span>
+                                    <span lang="en" class="hidden">Area Range: 322-583㎡ | Height: 4.5m</span>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <h4 class="text-xl font-bold text-dark">
+                                <span lang="zh">推荐业态</span>
+                                <span lang="en" class="hidden">Recommended Business Types</span>
+                            </h4>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm">
+                                    <span lang="zh">大型餐饮</span>
+                                    <span lang="en" class="hidden">Large Restaurants</span>
+                                </span>
+                                <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm">
+                                    <span lang="zh">健身中心</span>
+                                    <span lang="en" class="hidden">Fitness Centers</span>
+                                </span>
+                                <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm">
+                                    <span lang="zh">休闲会所</span>
+                                    <span lang="en" class="hidden">Leisure Clubs</span>
+                                </span>
+                                <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm">
+                                    <span lang="zh">KTV</span>
+                                </span>
+                                <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm">
+                                    <span lang="zh">屋顶花园配套</span>
+                                    <span lang="en" class="hidden">Rooftop Garden</span>
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <h4 class="text-xl font-bold text-dark">
+                                <span lang="zh">空间特点</span>
+                                <span lang="en" class="hidden">Space Features</span>
+                            </h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <i class="fa fa-check-circle text-primary mr-3"></i>
+                                    <span>
+                                        <span lang="zh">屋顶花园，环境优美</span>
+                                        <span lang="en" class="hidden">Rooftop garden with beautiful environment</span>
+                                    </span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa fa-check-circle text-primary mr-3"></i>
+                                    <span>
+                                        <span lang="zh">大面积空间，适合大型业态</span>
+                                        <span lang="en" class="hidden">Large space suitable for big businesses</span>
+                                    </span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa fa-check-circle text-primary mr-3"></i>
+                                    <span>
+                                        <span lang="zh">私密性好，适合会所类业态</span>
+                                        <span lang="en" class="hidden">Good privacy, ideal for clubs</span>
+                                    </span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa fa-check-circle text-primary mr-3"></i>
+                                    <span>
+                                        <span lang="zh">4.5米层高，空间舒适</span>
+                                        <span lang="en" class="hidden">4.5m ceiling height, comfortable space</span>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="pt-4">
+                            <a href="#contact" class="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors">
+                                <span lang="zh">预约看铺</span>
+                                <span lang="en" class="hidden">Book a Viewing</span>
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 投资优势 -->
+    <section id="advantages" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(2rem,5vw,3rem)] font-bold text-dark">
+                    <span lang="zh">投资优势</span>
+                    <span lang="en" class="hidden">Investment Advantages</span>
+                </h2>
+                <div class="w-24 h-1 bg-primary mx-auto mt-4 mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    <span lang="zh">紫金国际中心商业裙楼凭借其优越的地理位置、独特的设计理念和完善的配套设施，为品牌商家提供了极具投资价值的商业空间。</span>
+                    <span lang="en" class="hidden">ZIJIN International Center Commercial Podium, with its superior geographical location, unique design concept, and complete supporting facilities, provides brand merchants with highly valuable commercial space for investment.</span>
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <div class="bg-white p-8 rounded-xl shadow-lg transition-transform hover:transform hover:scale-105">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                        <i class="fa fa-line-chart text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">
+                        <span lang="zh">高投资回报率</span>
+                        <span lang="en" class="hidden">High ROI</span>
+                    </h3>
+                    <p class="text-gray-600">
+                        <span lang="zh">三亚作为国际旅游城市，商业价值持续攀升，投资回报率远高于全国平均水平。</span>
+                        <span lang="en" class="hidden">As an international tourist city, Sanya's commercial value continues to rise, with investment returns far higher than the national average.</span>
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg transition-transform hover:transform hover:scale-105">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                        <i class="fa fa-users text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">
+                        <span lang="zh">稳定客流保障</span>
+                        <span lang="en" class="hidden">Stable Customer Flow</span>
+                    </h3>
+                    <p class="text-gray-600">
+                        <span lang="zh">每年2000万+游客量，加上本地高端消费群体，为商业提供稳定的客流支持。</span>
+                        <span lang="en" class="hidden">With over 20 million tourists annually, plus local high-end consumer groups, we provide stable customer flow support for businesses.</span>
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg transition-transform hover:transform hover:scale-105">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                        <i class="fa fa-building text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">
+                        <span lang="zh">优质物业品质</span>
+                        <span lang="en" class="hidden">Premium Property Quality</span>
+                    </h3>
+                    <p class="text-gray-600">
+                        <span lang="zh">现代化建筑设计，高品质装修标准，完善的物业管理，为品牌提供优质经营环境。</span>
+                        <span lang="en" class="hidden">Modern architectural design, high-quality decoration standards, and complete property management provide brands with an excellent business environment.</span>
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg transition-transform hover:transform hover:scale-105">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                        <i class="fa fa-handshake-o text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">
+                        <span lang="zh">灵活招商政策</span>
+                        <span lang="en" class="hidden">Flexible Investment Policies</span>
+                    </h3>
+                    <p class="text-gray-600">
+                        <span lang="zh">前三年租金优惠，装修补贴，运营支持等多重优惠政策，助力品牌稳健发展。</span>
+                        <span lang="en" class="hidden">Multiple preferential policies such as rent discounts for the first three years, decoration subsidies, and operational support to help brands develop steadily.</span>
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg transition-transform hover:transform hover:scale-105">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                        <i class="fa fa-bullhorn text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">
+                        <span lang="zh">统一营销推广</span>
+                        <span lang="en" class="hidden">Unified Marketing</span>
+                    </h3>
+                    <p class="text-gray-600">
+                        <span lang="zh">专业运营团队，全年营销活动规划，媒体宣传推广，提升品牌知名度和销售额。</span>
+                        <span lang="en" class="hidden">Professional operation team, annual marketing activity planning, media promotion to enhance brand awareness and sales.</span>
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg transition-transform hover:transform hover:scale-105">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                        <i class="fa fa-lightbulb-o text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">
+                        <span lang="zh">创新业态支持</span>
+                        <span lang="en" class="hidden">Innovative Business Support</span>
+                    </h3>
+                    <p class="text-gray-600">
+                        <span lang="zh">鼓励创新业态入驻，提供政策支持和资源对接，共同打造差异化商业体验。</span>
+                        <span lang="en" class="hidden">Encourage innovative business formats to settle in, provide policy support and resource matching, and jointly create a differentiated commercial experience.</span>
+                    </p>
+                </div>
+            </div>
+            
+            <!-- 投资回报分析图表 -->
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+                <h3 class="text-2xl font-bold text-dark mb-8 text-center">
+                    <span lang="zh">投资回报分析</span>
+                    <span lang="en" class="hidden">Investment Return Analysis</span>
+                </h3>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-lg font-semibold text-dark mb-4">
+                            <span lang="zh">各楼层投资回报率对比</span>
+                            <span lang="en" class="hidden">ROI Comparison by Floor</span>
+                        </h4>
+                        <canvas id="roiChart" height="300"></canvas>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-dark mb-4">
+                            <span lang="zh">投资回收期预估</span>
+                            <span lang="en" class="hidden">Estimated Payback Period</span>
+                        </h4>
+                        <canvas id="paybackChart" height="300"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 意向品牌 -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(2rem,5vw,3rem)] font-bold text-dark">
+                    <span lang="zh">意向品牌</span>
+                    <span lang="en" class="hidden">Interested Brands</span>
+                </h2>
+                <div class="w-24 h-1 bg-primary mx-auto mt-4 mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    <span lang="zh">众多国际国内知名品牌已表达入驻意向，共同打造三亚商业新地标。</span>
+                    <span lang="en" class="hidden">Many well-known international and domestic brands have expressed their intention to settle in, jointly creating a new commercial landmark in Sanya.</span>
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+                <div class="bg-gray-50 p-6 rounded-xl flex items-center justify-center aspect-square">
+                    <div class="text-center">
+                        <div class="w-20 h-20 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                            <i class="fa fa-shopping-bag text-primary text-3xl"></i>
+                        </div>
+                        <p class="font-medium text-dark" lang="zh">LV</p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl flex items-center justify-center aspect-square">
+                    <div class="text-center">
+                        <div class="w-20 h-20 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                            <i class="fa fa-shopping-bag text-primary text-3xl"></i>
+                        </div>
+                        <p class="font-medium text-dark" lang="zh">Gucci</p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl flex items-center justify-center aspect-square">
+                    <div class="text-center">
+                        <div class="w-20 h-20 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                            <i class="fa fa-coffee text-primary text-3xl"></i>
+                        </div>
+                        <p class="font-medium text-dark" lang="zh">星巴克</p>
+                        <p class="font-medium text-dark hidden" lang="en">Starbucks</p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl flex items-center justify-center aspect-square">
+                    <div class="text-center">
+                        <div class="w-20 h-20 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                            <i class="fa fa-cutlery text-primary text-3xl"></i>
+                        </div>
+                        <p class="font-medium text-dark" lang="zh">海底捞</p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl flex items-center justify-center aspect-square">
+                    <div class="text-center">
+                        <div class="w-20 h-20 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                            <i class="fa fa-mobile text-primary text-3xl"></i>
+                        </div>
+                        <p class="font-medium text-dark" lang="zh">Apple</p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl flex items-center justify-center aspect-square">
+                    <div class="text-center">
+                        <div class="w-20 h-20 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                            <i class="fa fa-film text-primary text-3xl"></i>
+                        </div>
+                        <p class="font-medium text-dark" lang="zh">万达影城</p>
+                        <p class="font-medium text-dark hidden" lang="en">Wanda Cinema</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="py-20 bg-primary text-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <h2 class="text-[clamp(2rem,5vw,3rem)] font-bold">
+                        <span lang="zh">联系我们</span>
+                        <span lang="en" class="hidden">Contact Us</span>
+                    </h2>
+                    <p class="text-xl text-white/90">
+                        <span lang="zh">如果您对紫金国际中心商业裙楼感兴趣，欢迎随时联系我们，我们将竭诚为您服务。</span>
+                        <span lang="en" class="hidden">If you are interested in ZIJIN International Center Commercial Podium, please feel free to contact us, and we will be happy to serve you.</span>
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fa fa-map-marker text-secondary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">
+                                    <span lang="zh">项目地址</span>
+                                    <span lang="en" class="hidden">Project Address</span>
+                                </h4>
+                                <p class="text-white/80">
+                                    <span lang="zh">海南省三亚市天涯区迎宾路9号</span>
+                                    <span lang="en" class="hidden">No. 9 Yingbin Road, Tianya District, Sanya City, Hainan Province</span>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fa fa-phone text-secondary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">
+                                    <span lang="zh">招商热线</span>
+                                    <span lang="en" class="hidden">Investment Hotline</span>
+                                </h4>
+                                <p class="text-white/80">+86 13876597418</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fa fa-envelope text-secondary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">
+                                    <span lang="zh">电子邮箱</span>
+                                    <span lang="en" class="hidden">Email</span>
+                                </h4>
+                                <p class="text-white/80">info@zijininternational.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-x-4 pt-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
+                            <i class="fa fa-weixin text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
+                            <i class="fa fa-weibo text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
+                            <i class="fa fa-linkedin text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
+                            <i class="fa fa-instagram text-white"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-xl text-dark">
+                    <h3 class="text-2xl font-bold mb-6">
+                        <span lang="zh">预约咨询</span>
+                        <span lang="en" class="hidden">Book a Consultation</span>
+                    </h3>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">
+                                    <span lang="zh">姓名</span>
+                                    <span lang="en" class="hidden">Name</span>
+                                </label>
+                                <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-colors" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">
+                                    <span lang="zh">电话</span>
+                                    <span lang="en" class="hidden">Phone</span>
+                                </label>
+                                <input type="tel" id="phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-colors" placeholder="+86 138****7418">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
+                                <span lang="zh">电子邮箱</span>
+                                <span lang="en" class="hidden">Email</span>
+                            </label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-colors" placeholder="example@company.com">
+                        </div>
+                        
+                        <div>
+                            <label for="brand" class="block text-sm font-medium text-gray-700 mb-1">
+                                <span lang="zh">品牌名称</span>
+                                <span lang="en" class="hidden">Brand Name</span>
+                            </label>
+                            <input type="text" id="brand" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-colors" placeholder="Your Brand Name">
+                        </div>
+                        
+                        <div>
+                            <label for="interest" class="block text-sm font-medium text-gray-700 mb-1">
+                                <span lang="zh">意向业态</span>
+                                <span lang="en" class="hidden">Business Type</span>
+                            </label>
+                            <select id="interest" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-colors">
+                                <option value="" lang="zh">请选择意向业态</option>
+                                <option value="" lang="en" class="hidden">Please select business type</option>
+                                <option value="retail" lang="zh">高端零售</option>
+                                <option value="retail" lang="en" class="hidden">High-end Retail</option>
+                                <option value="food" lang="zh">特色餐饮</option>
+                                <option value="food" lang="en" class="hidden">Specialty Dining</option>
+                                <option value="entertainment" lang="zh">休闲娱乐</option>
+                                <option value="entertainment" lang="en" class="hidden">Entertainment</option>
+                                <option value="education" lang="zh">教育培训</option>
+                                <option value="education" lang="en" class="hidden">Education & Training</option>
+                                <option value="other" lang="zh">其他</option>
+                                <option value="other" lang="en" class="hidden">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">
+                                <span lang="zh">留言</span>
+                                <span lang="en" class="hidden">Message</span>
+                            </label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-colors" placeholder="
+                                <span lang="zh">请简要描述您的需求...</span>
+                                <span lang="en" class="hidden">Please briefly describe your needs...</span>
+                            "></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors">
+                            <span lang="zh">提交预约</span>
+                            <span lang="en" class="hidden">Submit Reservation</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-1">
+                    <div class="flex items-center space-x-2 mb-6">
+                            <div class="h-10 w-10 rounded-full bg-primary flex items-center justify-center">
+                                <span class="text-white text-xl font-bold">Z</span>
+                            </div>
+                            <span class="text-white text-xl font-bold">ZIJIN</span>
+                        </div>
+                        <p class="text-white/70 mb-6">
+                            <span lang="zh">紫金国际中心商业裙楼，打造三亚商业新地标。</span>
+                            <span lang="en" class="hidden">ZIJIN International Center Commercial Podium, creating a new commercial landmark in Sanya.</span>
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
+                                <i class="fa fa-weixin"></i>
+                            </a>
+                            <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
+                                <i class="fa fa-weibo"></i>
+                            </a>
+                            <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-bold mb-6">
+                            <span lang="zh">快速链接</span>
+                            <span lang="en" class="hidden">Quick Links</span>
+                        </h4>
+                        <ul class="space-y-3">
+                            <li><a href="#about" class="text-white/70 hover:text-white transition-colors">
+                                <span lang="zh">项目介绍</span>
+                                <span lang="en" class="hidden">About</span>
+                            </a></li>
+                            <li><a href="#location" class="text-white/70 hover:text-white transition-colors">
+                                <span lang="zh">区位优势</span>
+                                <span lang="en" class="hidden">Location</span>
+                            </a></li>
+                            <li><a href="#floors" class="text-white/70 hover:text-white transition-colors">
+                                <span lang="zh">楼层规划</span>
+                                <span lang="en" class="hidden">Floors</span>
+                            </a></li>
+                            <li><a href="#advantages" class="text-white/70 hover:text-white transition-colors">
+                                <span lang="zh">投资优势</span>
+                                <span lang="en" class="hidden">Advantages</span>
+                            </a></li>
+                            <li><a href="#contact" class="text-white/70 hover:text-white transition-colors">
+                                <span lang="zh">联系方式</span>
+                                <span lang="en" class="hidden">Contact</span>
+                            </a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-bold mb-6">
+                            <span lang="zh">联系我们</span>
+                            <span lang="en" class="hidden">Contact Us</span>
+                        </h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fa fa-map-marker text-secondary mt-1 mr-3"></i>
+                                <span class="text-white/70">
+                                    <span lang="zh">海南省三亚市天涯区迎宾路9号</span>
+                                    <span lang="en" class="hidden">No. 9 Yingbin Road, Tianya District, Sanya City, Hainan Province</span>
+                                </span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa fa-phone text-secondary mr-3"></i>
+                                <span class="text-white/70">+86 13876597418</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa fa-envelope text-secondary mr-3"></i>
+                                <span class="text-white/70">info@zijininternational.com</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-bold mb-6">
+                            <span lang="zh">关注我们</span>
+                            <span lang="en" class="hidden">Follow Us</span>
+                        </h4>
+                        <div class="bg-white/10 p-4 rounded-lg">
+                            <div class="text-center mb-4">
+                                <p class="text-white/90" lang="zh">扫码关注公众号</p>
+                                <p class="text-white/90 hidden" lang="en">Scan to follow our official account</p>
+                            </div>
+                            <div class="w-32 h-32 bg-white mx-auto rounded-lg flex items-center justify-center">
+                                <span class="text-dark text-sm">QR Code</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="border-t border-white/10 mt-12 pt-8 text-center text-white/50 text-sm">
+                    <p>
+                        <span lang="zh">&copy; 2024 紫金国际中心. 保留所有权利.</span>
+                        <span lang="en" class="hidden">&copy; 2024 ZIJIN International Center. All rights reserved.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-primary text-white shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 z-50">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        const backToTop = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-dark/90', 'shadow-lg');
+                navbar.classList.remove('bg-transparent');
+                backToTop.classList.add('opacity-100', 'visible');
+                backToTop.classList.remove('opacity-0', 'invisible');
+            } else {
+                navbar.classList.remove('bg-dark/90', 'shadow-lg');
+                navbar.classList.add('bg-transparent');
+                backToTop.classList.remove('opacity-100', 'visible');
+                backToTop.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        // 移动端菜单切换
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 楼层切换
+        const floorBtns = document.querySelectorAll('.floor-btn');
+        const floorContents = document.querySelectorAll('.floor-content');
+        
+        floorBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // 移除所有按钮的活动状态
+                floorBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-primary', 'text-white');
+                    b.classList.add('text-dark', 'hover:bg-gray-200');
+                });
+                
+                // 添加当前按钮的活动状态
+                this.classList.add('active', 'bg-primary', 'text-white');
+                this.classList.remove('text-dark', 'hover:bg-gray-200');
+                
+                // 隐藏所有内容
+                floorContents.forEach(content => {
+                    content.classList.add('hidden');
+                    content.classList.remove('active');
+                });
+                
+                // 显示当前内容
+                const floorId = this.getAttribute('data-floor');
+                const currentContent = document.getElementById(`floor-${floorId}`);
+                currentContent.classList.remove('hidden');
+                currentContent.classList.add('active');
+            });
+        });
+        
+        // 返回顶部
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // 语言切换
+        const langZh = document.getElementById('lang-zh');
+        const langEn = document.getElementById('lang-en');
+        const mobileLangZh = document.getElementById('mobile-lang-zh');
+        const mobileLangEn = document.getElementById('mobile-lang-en');
+        
+        function setLang(lang) {
+            const zhElements = document.querySelectorAll('[lang="zh"]');
+            const enElements = document.querySelectorAll('[lang="en"]');
+            
+            if (lang === 'zh') {
+                zhElements.forEach(el => el.classList.remove('hidden'));
+                enElements.forEach(el => el.classList.add('hidden'));
+                
+                // 更新按钮状态
+                langZh.classList.add('bg-primary', 'text-white');
+                langZh.classList.remove('bg-transparent', 'text-dark');
+                langEn.classList.remove('bg-primary', 'text-white');
+                langEn.classList.add('bg-transparent', 'text-white');
+                
+                mobileLangZh.classList.add('bg-primary', 'text-white');
+                mobileLangZh.classList.remove('bg-transparent', 'text-dark');
+                mobileLangEn.classList.remove('bg-primary', 'text-white');
+                mobileLangEn.classList.add('bg-transparent', 'text-dark');
+            } else {
+                zhElements.forEach(el => el.classList.add('hidden'));
+                enElements.forEach(el => el.classList.remove('hidden'));
+                
+                // 更新按钮状态
+                langEn.classList.add('bg-primary', 'text-white');
+                langEn.classList.remove('bg-transparent', 'text-white');
+                langZh.classList.remove('bg-primary', 'text-white');
+                langZh.classList.add('bg-transparent', 'text-white');
+                
+                mobileLangEn.classList.add('bg-primary', 'text-white');
+                mobileLangEn.classList.remove('bg-transparent', 'text-dark');
+                mobileLangZh.classList.remove('bg-primary', 'text-white');
+                mobileLangZh.classList.add('bg-transparent', 'text-dark');
+            }
+        }
+        
+        langZh.addEventListener('click', () => setLang('zh'));
+        langEn.addEventListener('click', () => setLang('en'));
+        mobileLangZh.addEventListener('click', () => setLang('zh'));
+        mobileLangEn.addEventListener('click', () => setLang('en'));
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // 关闭移动端菜单
+                    mobileMenu.classList.add('hidden');
+                    
+                    // 滚动到目标位置
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // 投资回报分析图表
+        window.addEventListener('load', function() {
+            // ROI图表
+            const roiCtx = document.getElementById('roiChart').getContext('2d');
+            const roiChart = new Chart(roiCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['
+                        <span lang="zh">一层</span>
+                        <span lang="en" class="hidden">1F</span>
+                    ', '
+                        <span lang="zh">二层</span>
+                        <span lang="en" class="hidden">2F</span>
+                    ', '
+                        <span lang="zh">三层</span>
+                        <span lang="en" class="hidden">3F</span>
+                    '],
+                    datasets: [{
+                        label: 'ROI (%)',
+                        data: [8.2, 7.5, 6.8],
+                        backgroundColor: [
+                            'rgba(109, 40, 217, 0.8)',
+                            'rgba(109, 40, 217, 0.6)',
+                            'rgba(109, 40, 217, 0.4)'
+                        ],
+                        borderColor: [
+                            'rgba(109, 40, 217, 1)',
+                            'rgba(109, 40, 217, 1)',
+                            'rgba(109, 40, 217, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'ROI (%)'
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // 投资回收期图表
+            const paybackCtx = document.getElementById('paybackChart').getContext('2d');
+            const paybackChart = new Chart(paybackCtx, {
+                type: 'line',
+                data: {
+                    labels: ['
+                        <span lang="zh">一层</span>
+                        <span lang="en" class="hidden">1F</span>
+                    ', '
+                        <span lang="zh">二层</span>
+                        <span lang="en" class="hidden">2F</span>
+                    ', '
+                        <span lang="zh">三层</span>
+                        <span lang="en" class="hidden">3F</span>
+                    '],
+                    datasets: [{
+                        label: '
+                            <span lang="zh">投资回收期（年）</span>
+                            <span lang="en" class="hidden">Payback Period (Years)</span>
+                        ',
+                        data: [12.2, 13.3, 14.7],
+                        backgroundColor: 'rgba(245, 158, 11, 0.2)',
+                        borderColor: 'rgba(245, 158, 11, 1)',
+                        borderWidth: 2,
+                        tension: 0.1,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: '
+                                    <span lang="zh">投资回收期（年）</span>
+                                    <span lang="en" class="hidden">Payback Period (Years)</span>
+                                '
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
