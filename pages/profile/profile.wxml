@@ -1,0 +1,22 @@
+<view class="safe-page placeholder-page">
+  <view class="status-bar">
+    <text>9:41</text>
+    <view class="status-icons"><view class="signal"></view><view class="wifi"></view><view class="battery"></view></view>
+  </view>
+  <view class="topbar">
+    <view class="page-title">我的</view>
+    <view class="capsule"><text class="dot-more">•••</text><view class="capsule-circle"></view></view>
+  </view>
+  <view class="profile-card card">
+    <view class="avatar">😊</view>
+    <view>
+      <view class="name">烧烤老友</view>
+      <view class="desc">常来常香，好友同享</view>
+    </view>
+  </view>
+  <view class="menu-card card">
+    <view>店主故事 <text>›</text></view>
+    <view>联系客服 <text>›</text></view>
+    <view>口味偏好 <text>›</text></view>
+  </view>
+</view>

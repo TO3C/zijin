@@ -1,0 +1,44 @@
+<view class="safe-page home-page">
+  <view class="status-bar">
+    <text>9:41</text>
+    <view class="status-icons"><view class="signal"></view><view class="wifi"></view><view class="battery"></view></view>
+  </view>
+
+  <view class="home-hero">
+    <view class="capsule home-capsule"><text class="dot-more">•••</text><view class="capsule-circle"></view></view>
+    <view class="brand-title">黄记烧烤</view>
+    <view class="brand-subtitle">一对年轻夫妻的烧烤店 <text class="heart">♥</text></view>
+    <view class="hand-copy">用心烤好每一串 ♡</view>
+    <view class="owner-scene">
+      <view class="string-light"></view>
+      <view class="owner boy"><view class="head"></view><view class="body"></view></view>
+      <view class="owner girl"><view class="head"></view><view class="body"></view></view>
+      <view class="grill"><view class="coal"></view><view class="stick s1"></view><view class="stick s2"></view><view class="stick s3"></view></view>
+    </view>
+  </view>
+
+  <view class="table-card card">
+    <view><text class="table-no">A08</text><text class="table-label">桌</text></view>
+    <view class="guest-text">3位小伙伴就餐中</view>
+    <button class="switch-btn" hover-class="none">♧ 更换桌号</button>
+  </view>
+
+  <button class="scan-button primary-button" bindtap="goMenu" hover-class="none">
+    <view class="scan-icon"></view>
+    <view>
+      <view>扫码点单</view>
+      <view class="button-tip">用心烤好每一串</view>
+    </view>
+  </button>
+
+  <view class="feature-row">
+    <view class="feature-item"><view class="feature-icon">🌍</view><view class="feature-title">店主故事</view><view class="feature-sub">我们是谁</view></view>
+    <view class="feature-item"><view class="feature-icon">♨</view><view class="feature-title">新鲜食材</view><view class="feature-sub">放心好食材</view></view>
+    <view class="feature-item"><view class="feature-icon">◇</view><view class="feature-title">用心烧烤</view><view class="feature-sub">好吃不贵</view></view>
+  </view>
+
+  <view class="promo-card">
+    <view class="promo-text"><view>新鲜现串</view><view>炭火现烤</view><text>好吃不贵，烟火气十足！</text><view class="heart-line">♡</view></view>
+    <view class="promo-skewers"><view wx:for="{{skewerLines}}" wx:key="*this" class="mini-stick"></view></view>
+  </view>
+</view>
