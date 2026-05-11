@@ -1,0 +1,38 @@
+<view class="safe-page confirm-page">
+  <view class="status-bar">
+    <text>9:41</text>
+    <view class="status-icons"><view class="signal"></view><view class="wifi"></view><view class="battery"></view></view>
+  </view>
+  <view class="topbar confirm-topbar">
+    <view class="back" bindtap="goBack">‹</view>
+    <view class="page-title">确认订单 <text class="hand-note">吃好喝好</text></view>
+    <view class="capsule"><text class="dot-more">•••</text><view class="capsule-circle"></view></view>
+  </view>
+
+  <view class="table-banner card">
+    <view><text class="table-no">A08</text><text class="table-label">桌</text><view class="guest-text">3位小伙伴就餐中</view></view>
+    <view class="couple-mini"><view class="mini-person boy-mini"></view><view class="mini-person girl-mini"></view></view>
+  </view>
+
+  <view class="tip-row">🔊 <text>温馨提示：请按需点餐，珍惜食材，避免浪费哦~</text></view>
+
+  <view class="order-card card">
+    <view wx:for="{{cart}}" wx:key="id" class="order-item">
+      <view class="food-thumb {{item.imageClass}}"></view>
+      <view class="order-info"><view class="order-name">{{item.name}}</view><view><text class="price">¥{{item.price}}</text><text class="unit">/{{item.unit}}</text></view></view>
+      <view class="qty-control"><button hover-class="none" bindtap="minus" data-id="{{item.id}}">−</button><text>{{item.count}}</text><button class="plus" hover-class="none" bindtap="plus" data-id="{{item.id}}">＋</button></view>
+      <view class="item-total">¥{{item.price * item.count}}</view>
+    </view>
+  </view>
+
+  <input class="remark card" placeholder="备注口味或其他需求（不吃辣、少辣等）" placeholder-class="remark-placeholder" />
+
+  <view class="bill card">
+    <view><text>菜品金额</text><text>¥{{foodTotal}}</text></view>
+    <view><text>餐具费</text><text>¥{{serviceFee}}</text></view>
+    <view class="bill-total"><text>合计</text><text class="price">¥{{totalPrice}}</text></view>
+  </view>
+
+  <button class="submit-btn primary-button" hover-class="none" bindtap="submitOrder">提交订单</button>
+  <view class="footer-tip">下单后请及时到前台结账，谢谢配合</view>
+</view>
